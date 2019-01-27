@@ -1,0 +1,100 @@
+settings:
+  # time in seconds untill the crate despawns on its own
+  autoremovetime: 120
+  # title of the chest if reward type is item
+  chest: '&4&lBlood Crate'
+  # time in seconds between a killed player spawning a crate and the next one they can spawn
+  cooldown: 120
+  # should players with the same ipaddres be stoped from droping blood crates when killing each other
+  ipcheck: true
+  # should the plugin print debuging info about ipcheck in console
+  ipdebug: false
+  # % chance of a crate spawning when a player is killed by another player
+  spawnchance: 10
+  reward:
+    # what type of reward a player gets for claiming the crate
+    # item, command
+    type: item
+    # should the player get more than on reward
+    multiple: false
+    # minimum rewards a player should get if multiple rewards are enabled
+    min: 1
+    # max rewards a player should get if multiple rewards are enabled
+    max: 4
+#worlds that bloodcrates should not spawn in
+blacklist:
+  - 'someworld'
+  - 'anotherworld'
+hologram:
+  height: 2.5
+  text:
+    - '&4&lBlood Crate &8» &7(Right Click)'
+    - 'use & for color'
+    - 'you can add as many lines as you want'
+# for color codes use &
+messages:
+  # sent to th player whos kill triggered the crate
+  killer:
+    - '&7Quick! A blood crate has spawned, claim it before anyone else does!'
+  # /bloodcrate check (player)
+  check:
+    # crate can spawn
+    can: '&7[&6Blood Crates&7] &rA blood crate can spawn here.'
+    # crate can't spawn in the world
+    world: "&7[&6Blood Crates&7] &rBlood crates can't spawn in this world."
+    # crate can spawn in the world but not at that location
+    location: "&7[&6Blood Crates&7] &rBlood crates can't spawn at this location."
+  # /bloodcrate cooldowns
+  cooldowns:
+    # /bloodcrate cooldowns list
+    list:
+      # extra line shown before the list
+      top: '&7[&6Blood Crates&7] &rThere are {count} players with cooldowns.'
+      # format for players with cooldowns
+      # {player} players name
+      # {time} time left in cooldown
+      player: '{player}: {time}'
+    # /bloodcrate cooldowns remove [player]
+    # {player} players name
+    remove: "&7[&6Blood Crates&7] &rYou have removed {player}'s cooldown."
+    # /bloodcrate cooldowns set [player] [time]
+    # {player} players name
+    # {time} time left in cooldown
+    set: "&7[&6Blood Crates&7] &rYou have set {player}'s cooldown to {time}."
+    # /bloodcrates cooldowns check (player)
+    check:
+      # player has a cooldown
+      # {player} players name
+      # {time} time left in cooldown
+      yes: '&7[&6Blood Crates&7] &rPlayer {player} has a cooldown of {time}.'
+      # player does not have a cooldown
+      # {player} players name
+      no: '&7[&6Blood Crates&7] &rPlayer {player} does not have a cooldown.'
+  # /bloodcrates location
+  locations:
+    # line added before the list
+    # {count} number of crates
+    top: '&7[&6Blood Crates&7] &rThere are {count} crates.'
+    # formate of crates
+    # {x} crate x coordinate
+    # {y} crate y coordinate
+    # {z} crate z coordinate
+    list: 'X:{x} Y:{y} Z:{z}'
+  # /bloodcrates reload
+  reload: '&7[&6Blood Crates&7] &rThe configs have been reloaded.'
+  # /bloodcratesdebug
+  debug:
+    # message when a crate is spawned with the debug command
+    spawned: "&3Crate spawned"
+    # message when a crate can't be spawned with the debug command
+    fail: "&4Crate could not spawn"
+    # message when a crate did not spawn due to spawn chance 
+    didnt: "&4Crate did not spawn"
+  error:
+    # sent when a player uses a command or subcommand without permission
+    nopermission: '&cYou do not have permission to use this command.'
+    # sent when an invalid or offline player name was used
+    # {player} invalid player name
+    playernotfound: '&cPlayer {player} not found.'
+    # sent when console trys to use a player only command
+    notaplayer: '&cYou must be a player to use this command.'

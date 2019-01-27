@@ -1,0 +1,74 @@
+name: BloodCrates
+version: 1.0.3
+main: me.sungcad.bloodcrates.BloodCratesPlugin
+author: sungcad
+website: https://www.spigotmc.org/resources/blood-crates.44590/
+
+depend:
+- HolographicDisplays
+commands:
+  bloodcrates:
+    usage: /<command> help
+    aliases:
+    - bloodcrate
+    - bcrates
+    - bcrate
+    permission: bloodcrates.command
+    permission-message: §cYou do not have permission to use this command
+  bloodcratesdebug:
+    usage: /<command> (spawn|cspawn)
+    aliases:
+    - bcdb
+    - bcdebug
+    - bloodcratedebug
+    permission: bloodcrates.debug
+    permission-message: §cYou do not have permission to use this command
+permissions:
+  bloodcrates.admin:
+    description: Gives access to all Blood Crate commands
+    children:
+      bloodcrates.cooldowns.remove: true
+      bloodcrates.cooldowns.set: true
+      bloodcrates.locations: true
+      bloodcrates.version: true
+      bloodcrates.reload: true
+      bloodcrates.config: true
+      bloodcrates.check: true
+      bloodcrates.items: true
+      bloodcrates.debug: true
+  bloodcrates.items:
+    description: Gives access to use /bloodcrates items
+    children:
+      bloodcrates.command: true
+  bloodcrates.check:
+    description: Gives access to use /bloodcrates check
+    children:
+      bloodcrates.command: true
+  bloodcrates.version:
+    description: Gives acces to use /bloodcrates version
+    children:
+      bloodcrates.command: true
+  bloodcrates.help:
+    description: Gives access to use /bloodcrates help
+    children:
+      bloodcrates.command.: true
+  bloodcrates.config:
+    description: Gives access to use /bloodcrates config
+    children:
+      bloodcrates.help: true
+  bloodcrates.cooldowns:
+    description: Gives access to use /bloodcrates cooldowns
+    children:
+      bloodcrates.help: true
+  bloodcrates.cooldowns.remove:
+    description: Gives you permission to remove cooldowns
+    children:
+      bloodcrates.cooldowns: true
+  bloodcrates.cooldowns.set:
+    description: Gives you permission to set cooldowns
+    children:
+      bloodcrates.cooldowns: true
+  bloodcrates.locations:
+    description: Gives access to use /bloodcrates locations
+    children:
+      bloodcrates.help: true

@@ -1,0 +1,14 @@
+# Set commands that will be run when a player claims a crate
+command1:
+  chance: 5
+  message:
+    - '&3message that is sent to the player'
+    - '&3you can add as many lines as you want'
+  commands:
+    - 'eco give {player} 100'
+otherone:
+  chance: 2
+  message:
+    - 'some other message'
+  commands:
+    - 'eco give {player} 1000'
